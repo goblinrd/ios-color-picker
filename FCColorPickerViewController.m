@@ -24,6 +24,8 @@
 @property (readwrite, nonatomic, strong) IBOutlet UIView *crossHairs;
 @property (readwrite, nonatomic, strong) IBOutlet UIView *brightnessBar;
 @property (readwrite, nonatomic, strong) IBOutlet FCColorSwatchView *swatch;
+@property (nonatomic, weak) IBOutlet UIButton* chooseButton;
+@property (nonatomic, weak) IBOutlet UIButton* cancelButton;
 
 - (IBAction) chooseSelectedColor;
 - (IBAction) cancelColorSelection;
@@ -66,6 +68,17 @@
     self.brightnessBar.layer.cornerRadius = 9;
     self.brightnessBar.layer.borderColor = edgeColor.CGColor;
     self.brightnessBar.layer.borderWidth = 2;
+    
+    if (_chooseButtonTitle == nil) {
+        _chooseButtonTitle = @"Choose";
+    }
+    
+    if (_cancelButtonTitle == nil) {
+        _cancelButtonTitle = @"Cancel";
+    }
+    
+    [self.chooseButton setTitle: _chooseButtonTitle forState:UIControlStateNormal];
+    [self.cancelButton setTitle: _cancelButtonTitle forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

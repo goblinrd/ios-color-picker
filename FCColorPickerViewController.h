@@ -104,6 +104,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy, null_resettable) UIColor *tintColor;
 
+@property (nonatomic, nullable) NSString* chooseButtonTitle;
+@property (nonatomic, nullable) NSString* cancelButtonTitle;
+
 @end
 
 NS_ASSUME_NONNULL_END
